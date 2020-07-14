@@ -9,20 +9,35 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class StarShow {
 	
-	Robot robot = new Robot("batman");
+	Robot frank = new Robot("batman");
 	
 	void makeStars() {
 		
 		drawStar(150);	//5. delete this line. You will draw the star again in step 8.
 		// 13. Set the speed to 8
+		frank.setSpeed(8);
 
 		// 6. Make a variable to hold the X position of the Robot and set it to 10
+		int xpos = 10;
 
 		// 7. Make a variable to hold the Y position of the Robot and set it to 600
+		int ypos = 600;
 
 		// 8. Make a variable to hold the star size and set it to 25
+		int starsize = 25;
 
 		// 12. Use a for loop to repeat steps #19 to #18, 30 times
+		for (int i = 0; i < 30; i++) {
+			frank.setPenWidth(i);
+			frank.setX(xpos);
+			frank.setY(ypos);
+			drawStar(starsize);
+			xpos += starsize;
+			ypos -= starsize;
+			starsize += 10;
+			frank.turn(12);
+			
+		}
 
 			// 19. Set the pen width to i 
 	
@@ -46,8 +61,13 @@ public class StarShow {
 
 	private void drawStar(int starSize) {
 		// 2. Put the robot's pen down
+		frank.penDown();
 
 		// 4. Repeat both commands 5 times. See Figure 1 at http://bit.ly/star-show
+		for (int i = 0; i < 5; i++) {
+			frank.move(starSize);
+			frank.turn(144);
+		}
 
 			// 1. Move the robot the distance of the starSize variable
 	
