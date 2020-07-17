@@ -31,7 +31,7 @@ public class DragonFight {
 	    String yell = "yell";
 		// 9. If they typed in "yell":
 		Random randy = new Random();
-		int randNum = randy.nextInt(10 + 1);
+		int randNum = randy.nextInt(50 + 1);
 		if(typeYellKick.equalsIgnoreCase(yell)) {
 			dragonHealth -= randNum;
 		}
@@ -49,7 +49,7 @@ public class DragonFight {
 			//-- Subtract that number from the dragon's health variable
 			
 			
-		int randNum3 = randy.nextInt(35 + 1);
+		int randNum3 = randy.nextInt(30 + 1);
 		playerHealth -= randNum3; 
 		// 11.  Find a random number between 0 and 35 and store it in playerDamage
 		
